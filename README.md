@@ -1,7 +1,6 @@
 # TelecomX
 
-# Challenge ONE Data Science - Alura
-![image](https://github.com/user-attachments/assets/59a9b23d-4522-439e-be93-5896c641087a)
+![image](https://github.com/user-attachments/assets/63990d32-0a1b-4f0d-b03a-37bde8688784)
 
 # Descrição do Projeto
 Este projeto faz parte do **Challenge ONE Data Science da Alura**, focado na análise de dados de uma empresa de telecomunicações para entender e prever a **evasão de clientes (Churn)**. O objetivo é identificar os fatores que levam os clientes a cancelar seus serviços, fornecendo insights acionáveis para a empresa desenvolver estratégias eficazes de retenção.
@@ -14,7 +13,8 @@ Este projeto faz parte do **Challenge ONE Data Science da Alura**, focado na an�
   * `pd.read_json()` para importar o dataset.
   * `pd.DataFrame()` para criar o DataFrame.
 
-  ![image](https://github.com/user-attachments/assets/59a9b23d-4522-439e-be93-5896c641087a) (*Nota: Usar uma imagem que represente a extração dos dados*)
+  ![image](https://github.com/user-attachments/assets/b4fe4ad6-6447-40b4-8bff-6ba823bcc34c)
+
 
 - `Etapa 2`: **Normalização e Transformação Inicial**
   Normalização de colunas aninhadas e concatenação com o DataFrame principal para criar uma estrutura de dados plana e unificada.
@@ -24,7 +24,11 @@ Este projeto faz parte do **Challenge ONE Data Science da Alura**, focado na an�
   * `pd.concat(axis=1)` para unir os DataFrames normalizados.
   * `.drop(columns=[...])` para remover as colunas aninhadas originais.
 
-  ![image](https://github.com/user-attachments/assets/76219fa8-ecdf-4cec-9060-0ae695c469dc) (*Nota: Usar uma imagem que represente o DataFrame normalizado*)
+  ![image](https://github.com/user-attachments/assets/b1749c42-31c5-4605-a415-4b006516dc30)
+  
+  ![image](https://github.com/user-attachments/assets/ec6a702c-7202-4d0e-aa70-5a5b28ee5362)
+
+
 
 - `Etapa 3`: **Tratamento de Dados Faltantes e Inconsistências**
   Identificação e tratamento de valores ausentes e inconsistências nas colunas chave para garantir a qualidade dos dados.
@@ -36,7 +40,11 @@ Este projeto faz parte do **Challenge ONE Data Science da Alura**, focado na an�
   * `.loc[idx, "Charges.Total"] = ...` para preencher valores faltantes em `Charges.Total`.
   * `.astype('float64')` para converter o tipo de dados de `Charges.Total`.
 
-  ![image](https://github.com/user-attachments/assets/c4fba84c-bf05-433d-4cec-9060-0ae695c469dc) (*Nota: Usar uma imagem que represente a coluna Churn ou Charges.Total após o tratamento*)
+  ![image](https://github.com/user-attachments/assets/c7ba3792-3ce8-42c2-a9c0-cfd26f987ed3)
+  
+  ![image](https://github.com/user-attachments/assets/01773b73-9cf2-4e9d-9828-b980ef08a02c)
+
+
 
 - `Etapa 4`: **Criação de Novas Variáveis**
   Criação de uma nova métrica para análise diária dos gastos dos clientes.
@@ -44,7 +52,8 @@ Este projeto faz parte do **Challenge ONE Data Science da Alura**, focado na an�
   **Métodos utilizados:**
   * Operações aritméticas simples para criar a coluna `Charges.diary` (posteriormente `gastos_diarios`).
 
-  ![image](https://github.com/user-attachments/assets/7472bc2e-2680-4bbd-8ff1-f2e6f39b2d00) (*Nota: Usar uma imagem que mostre a nova coluna de gastos diários*)
+  ![image](https://github.com/user-attachments/assets/c8b9298b-2ea3-497e-a566-dc8716eae7dd)
+
 
 - `Etapa 5`: **Padronização e Renomeação de Colunas**
   Transformação de valores textuais para binários (0 e 1) e renomeação de todas as colunas para o português, visando maior clareza e facilidade de análise.
@@ -53,7 +62,11 @@ Este projeto faz parte do **Challenge ONE Data Science da Alura**, focado na an�
   * `.replace({'Yes': 1, 'No': 0})` para mapear valores binários.
   * `.rename(columns={...})` para traduzir e padronizar os nomes das colunas.
 
-  ![image](https://github.com/user-attachments/assets/a663cb56-90db-4ba7-8b65-d9983ee79d30) (*Nota: Usar uma imagem que mostre o DataFrame com colunas renomeadas ou um exemplo de valores binários*)
+  ![image](https://github.com/user-attachments/assets/dc7f9928-9fe4-46e8-971e-5a883c48adc4)
+
+  ![image](https://github.com/user-attachments/assets/7ba103d1-5287-42b4-ad7a-bc2264e78b2d)
+
+
 
 - `Etapa 6`: **Análise Descritiva dos Dados**
   Cálculo de métricas estatísticas para colunas numéricas e análise de frequência para colunas categóricas, fornecendo uma visão geral da distribuição dos dados.
@@ -63,7 +76,11 @@ Este projeto faz parte do **Challenge ONE Data Science da Alura**, focado na an�
   * `.value_counts()` para contagem de frequência de categorias.
   * `.value_counts(normalize=True).mul(100)` para calcular porcentagens.
 
-  ![image](https://github.com/user-attachments/assets/b7e757f8-2b08-46ea-87d1-72811096c975) (*Nota: Usar uma imagem da saída do .describe() ou de algumas value_counts()*)
+  ![image](https://github.com/user-attachments/assets/725c16fa-238c-452e-967a-6aad114f1389)
+
+  ![image](https://github.com/user-attachments/assets/55ca70cb-f818-4974-8b40-2dcf41fd2f7a)
+
+
 
 - `Etapa 7`: **Análise Exploratória do Churn: Variáveis Categóricas**
   Visualização da distribuição do Churn em relação a diferentes variáveis categóricas para identificar perfis de clientes com maior propensão à evasão.
@@ -73,20 +90,24 @@ Este projeto faz parte do **Challenge ONE Data Science da Alura**, focado na an�
   * `seaborn.countplot()` para gráficos de barras agrupados.
   * Ajustes para exibição de números absolutos e porcentagens nas barras.
 
+  ![image](https://github.com/user-attachments/assets/74cc5f0a-ad7f-497f-90df-79a3ae96ebb2)
+
+
   ---
   ### Gráfico de Distribuição de Churn
-  * **Tipo:** Gráfico de Barras
+  * **Tipo:** Gráfico de Colunas
   * **Objetivo:** Visualizar a proporção de clientes que cancelaram e os que não cancelaram o serviço.
 
-  ![image](https://github.com/user-attachments/assets/6b11890e-f928-42fc-90af-e9ffa817a9cb) (*Nota: Usar uma imagem do gráfico de distribuição geral de churn*)
+  ![image](https://github.com/user-attachments/assets/984073f9-b497-4a6c-8798-136c58a285a1)
+
 
   ---
   ### Gráficos de Churn por Variáveis Categóricas (Exemplos)
-  * **Tipo:** Gráficos de Barras Agrupadas
+  * **Tipo:** Gráficos de Barras Verticais Agrupadas
   * **Objetivo:** Comparar as taxas de churn entre diferentes categorias (gênero, tipo de contrato, serviço de internet, método de pagamento, etc.).
 
-  ![image](https://github.com/user-attachments/assets/a32d4e28-f1e2-4240-a77c-5e748b1aa0a2) (*Nota: Usar uma imagem de exemplo de um gráfico de churn por categoria, como 'Serviço de Internet' ou 'Tipo de Contrato'*)
-  ![image](https://github.com/user-attachments/assets/2c19b824-bc31-4c0e-9653-3ce024b0-661f-4b53-86e9-d57748b4d5cf) (*Nota: Usar outra imagem de exemplo de um gráfico de churn por categoria, como 'Método de Pagamento'*)
+  ![image](https://github.com/user-attachments/assets/3dcf8f8c-d1d5-48ab-8447-b1b91388ea72)
+
 
 - `Etapa 8`: **Análise Exploratória do Churn: Variáveis Numéricas**
   Exploração da distribuição de variáveis numéricas (`meses_de_servico`, `gastos_mensais`, `gastos_totais`, `gastos_diarios`) em relação ao churn, utilizando histogramas e gráficos de densidade para identificar padrões.
@@ -95,14 +116,20 @@ Este projeto faz parte do **Challenge ONE Data Science da Alura**, focado na an�
   * `seaborn.histplot()` para histogramas.
   * `seaborn.kdeplot()` para gráficos de densidade (KDE).
   * Parâmetros `hue`, `multiple='stack'` e `fill=True` para comparação entre grupos.
+ 
+  ![image](https://github.com/user-attachments/assets/92868e13-8894-4266-aea1-3f52b47d9b19)
+
 
   ---
   ### Gráficos de Churn por Variáveis Numéricas (Exemplos)
   * **Tipo:** Histogramas Superpostos e Gráficos de Densidade (KDE Plot)
   * **Objetivo:** Visualizar a forma e densidade das distribuições de variáveis numéricas para clientes que cancelaram e não cancelaram.
 
-  ![image](https://github.com/user-attachments/assets/6b11890e-f928-42fc-90af-e9ffa817a9cb) (*Nota: Usar uma imagem de um histograma/KDE plot, por exemplo, 'Meses de Serviço'*)
-  ![image](https://github.com/user-attachments/assets/a32d4e28-f1e2-4240-a77c-5e748b1aa0a2) (*Nota: Usar uma imagem de outro histograma/KDE plot, por exemplo, 'Gastos Totais'*)
+  ![image](https://github.com/user-attachments/assets/14ed71df-c507-4003-ab23-584e7db9aee9)
+
+  ![image](https://github.com/user-attachments/assets/2478b7ba-52d3-4dbf-aede-3d407db0d017)
+
+
 
 # 📈 Análise e Conclusão
 
