@@ -164,4 +164,3 @@ Com base nos achados da análise, são propostas as seguintes recomendações pa
 # 💻 Desenvolvedores
 [<img loading="lazy" src="https://avatars.githubusercontent.com/u/201495780?s=96&v=4" width=115><br><sub>Pedro Rocha</sub>](https://github.com/Pedro-Rocha89)
 
-[<img loading="lazy" src="Logo Alura.jfif" width=115><br><sub>Alura</sub>](https://www.alura.com.br/)
